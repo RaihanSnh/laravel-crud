@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId("user_id")->constrained("users");
             $table->string("title", 100);
-            $table->text("descriptiom");
+            $table->text("description");
             $table->string("banner_image", 220)->nullable();
             $table->enum("status", ["1", "0"]);
             $table->timestamps();
