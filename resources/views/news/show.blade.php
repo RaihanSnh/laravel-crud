@@ -1,4 +1,4 @@
-<x-layout>
+<x-app-layout>
     <div class="mid-container">
         <h2>News Details</h2>
         <div class="news-details">
@@ -30,4 +30,4 @@
         <a href="{{ route('news.index') }}" class="action-link view-link">Back</a>
         <a href="{{ route('news.edit', $news->id) }}" class="action-link edit-link">Edit</a>
     </div>
-</x-layout>
+</x-app-layout>

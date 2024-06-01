@@ -1,4 +1,4 @@
-<x-layout>
+<x-app-layout>
     <div class="container">
         <a href="{{ route('news.create') }}" class="create-news-button">Create News</a>
         <table>
@@ -44,4 +44,4 @@
             {{ $newss->links() }}
         </div>
     </div>
-</x-layout>
+</x-app-layout>

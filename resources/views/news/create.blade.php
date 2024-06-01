@@ -1,4 +1,4 @@
-<x-layout>
+<x-app-layout>
     <div class="mid-container">
         <h2>Create News</h2>
         <form action="{{ route('news.store') }}" method="post" enctype="multipart/form-data">
@@ -38,4 +38,4 @@
         <br>
         <a href="{{ route('news.index') }}" class="action-link view-link">Back</a>
     </div>
-</x-layout>
+</x-app-layout>

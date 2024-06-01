@@ -13,7 +13,9 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $newss = News::orderBy("created_at", "DESC")->paginate(10);
+        $newss = News::query()
+        ->where("user_id", request()->user()->id)
+        ->orderBy("created_at", "DESC")->paginate(10);
         return view("news.index", [
             "newss" => $newss
         ]);
@@ -38,7 +40,7 @@ class NewsController extends Controller
             "status" => "required",
         ]);
 
-        $data["user_id"] = 1;
+        $data["user_id"] = request()->user()->id;
 
         $imageName = null;
 
@@ -65,6 +67,9 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
+        if($news->usr_id != request()->user()->id){
+            abort(403);
+        }
         return view("news.show", [
             "news" => $news
         ]);

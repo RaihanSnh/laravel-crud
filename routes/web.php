@@ -16,7 +16,11 @@ Route::get('/', function () {
 // Route::put("news/{news}", [NewsController::class, "update"])->name("news.update");
 // Route::delete("news/{news}", [NewsController::class, "destroy"])->name("news.destroy");
 
-Route::resource("news", NewsController::class);
+Route::group([
+    "middleware" => ['auth', 'verified']
+], function(){
+    Route::resource("news", NewsController::class);
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
