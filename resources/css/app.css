@@ -1,0 +1,282 @@
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #6667AB; 
+    margin: 0;
+    padding: 0;
+}
+
+/* News Container */
+.container {
+    max-width: 1000px;
+    margin: 10px auto;
+    background-color: #fff;
+    border-radius: 15px; 
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(102, 103, 171, 0.2); 
+}
+
+.mid-container {
+    max-width: 700px;
+    margin: 10px auto;
+    background-color: #fff;
+    border-radius: 15px; 
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(102, 103, 171, 0.2); 
+}
+
+/* News List Table Settings */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #6667AB; 
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Table Action Buttons */
+.action-buttons button,
+.action-buttons a {
+    background-color: #6667AB; 
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px; 
+    cursor: pointer;
+    font-size: 12px;
+    margin-right: 5px;
+}
+ 
+ .action-buttons button:hover {
+    background-color: #5a5c9a;
+ }
+ 
+ a.edit-link {
+    color: #FFFFFF;
+    background-color: #9c89b8; 
+    border-color: #9c89b8; 
+    border-radius: 4px; 
+    box-shadow: 0 2px 4px rgba(102, 103, 171, 0.2);
+ }
+ 
+ a.view-link {
+    color: #FFFFFF;
+    background-color: #6d6875; 
+    border-radius: 4px; 
+    box-shadow: 0 2px 4px rgba(102, 103, 171, 0.2);
+ }
+ 
+ .delete-link {
+    color: #FFFFFF;
+    background-color: #ff6b6b; 
+    border-color: #ff6b6b; 
+    border-radius: 4px; 
+    box-shadow: 0 2px 4px rgba(255, 107, 107, 0.2);
+ }
+ 
+ a.action-link {
+    display: inline-block;
+    margin-bottom: 0;
+    text-decoration: none;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 17px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+ }
+ 
+ /* Create News Button */
+ .create-news-button {
+    background-color: #A78BFA;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+ }
+ 
+ .create-news-button:hover {
+    background-color: #8D73E6;
+ }
+ 
+ .app-error {
+    color: #C9302C;
+    padding-top: 5px;
+    font-weight: 700;
+ }
+ 
+ /*Pagination*/
+ .pagination {
+    margin-top: 20px;
+    text-align: center;
+ }
+ 
+ .pagination a {
+    color: #A78BFA;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: 1px solid #D5BCFF;
+    margin: 0 5px;
+    border-radius: 5px;
+ }
+ 
+ .pagination a.active {
+    background-color: #A78BFA;
+    color: white;
+ }
+ 
+ .pagination a:hover:not(.active) {
+    background-color: #D5BCFF;
+ }
+ 
+ .pagination a {
+    display: inline-block;
+ }
+ 
+ .pagination svg.w-5.h-5 {
+    display: none;
+ }
+ 
+ .pagination p.text-sm {
+    padding: 15px;
+ }
+ 
+ .pagination a[rel=next] {
+    display: none;
+ }
+ 
+ /* Form Input Settings */
+ .form-group {
+    margin-bottom: 20px;
+ }
+ 
+ label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+ }
+ 
+ input,
+ textarea,
+ select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #D5BCFF;
+    transition: border-color 0.3s ease;
+ }
+ 
+ input:focus,
+ textarea:focus,
+ select:focus {
+    border-color: #A78BFA;
+    outline: none;
+ }
+ 
+ textarea {
+    height: 150px;
+ }
+ 
+ .news-details {
+    margin-bottom: 20px;
+ }
+ 
+ button {
+    background-color: #A78BFA;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+ }
+ 
+ button.form-btn {
+    background-color: #A78BFA !important;
+ }
+ 
+ button:hover {
+    background-color: #8D73E6;
+ }
+ 
+ table {
+    margin-top: 20px;
+ }
+ 
+ /* HTML Elements Settings */
+ h2 {
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #6B46C1;
+ }
+ 
+ h3 {
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #6B46C1;
+ }
+ 
+ p {
+    margin: 0;
+ }
+ 
+ /* Success message */
+ .success-message {
+    background-color: #A78BFA;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.5s ease-in-out;
+    border-radius: 0 0 10px 10px;
+ }
+ 
+ /* Slide down animation */
+ @keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+ }

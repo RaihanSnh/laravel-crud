@@ -13,7 +13,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        echo "<h1>Index Method</h1>";
+        return view("news.index");
     }
 
     /**
