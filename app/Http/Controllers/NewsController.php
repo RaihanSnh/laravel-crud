@@ -13,7 +13,10 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return view("news.index");
+        $newss = News::orderBy("created_at", "DESC")->paginate(10);
+        return view("news.index", [
+            "newss" => $newss
+        ]);
     }
 
     /**
@@ -37,9 +40,9 @@ class NewsController extends Controller
 
         $data["user_id"] = 1;
 
-        $imageName = NULL;
+        $imageName = null;
 
-        if($request->banner_image != NULL){
+        if($request->banner_image != null){
             $imageObject = $request->banner_image;
 
             $imageExtension = $imageObject->getClientOriginalExtension();
@@ -51,7 +54,7 @@ class NewsController extends Controller
         }
         
         $data["banner_image"] = $imageName;
-        
+
         News::create($data);
 
         return to_route('news.create')->with("success", "News created");

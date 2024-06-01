@@ -36,6 +36,6 @@
             <button type="submit" class="form-btn">Create News</button>
         </form>
         <br>
-        <a href="#" class="action-link view-link">Back</a>
+        <a href="{{ route('news.index') }}" class="action-link view-link">Back</a>
     </div>
 </x-layout>

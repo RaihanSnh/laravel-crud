@@ -1,6 +1,6 @@
 <x-layout>
     <div class="container">
-        <a href="#" class="create-news-button">Create News</a>
+        <a href="{{ route('news.create') }}" class="create-news-button">Create News</a>
         <table>
             <thead>
                 <tr>
@@ -13,22 +13,31 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($newss as $news)
                 <tr>
-                    <td>1</td>
-                    <td>Title</td>
-                    <td>--</td>
-                    <td>--</td>
-                    <td>--</td>
+                    <td>{{ $news->id }}</td>
+                    <td>{{ $news->title }}</td>
+                    <td>
+                        @if (!empty($news->banner_image))
+                        <img style="height: 80px;" src="{{ asset('images/' . $news->banner_image) }}" alt="">
+
+                        @else
+                            Not Avaible
+                        @endif
+                    </td>
+                    <td>{{ $news->status == 1 ? "Active" : "Inactive" }}</td>
+                    <td>{{ $news->created_at }}</td>
                     <td class="action-buttons">
                         <a href="#" class="action-buttons"><i class="fa fa-eye"></i></a>
                         <a href="#" class="action-buttons"><i class="fa fa-edit"></i></a>
                         <a href="#" class="action-buttons"><i class="fa fa-trash"></i></a>
                     </td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
         <div class="pagination">
-    
+            {{ $newss->links() }}
         </div>
     </div>
 </x-layout>
