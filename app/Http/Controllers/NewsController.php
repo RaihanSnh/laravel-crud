@@ -21,7 +21,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        echo "<h1>Create Method</h1>";
+        return view("news.create");
     }
 
     /**
@@ -29,7 +29,12 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "title" => "required|string",
+            "description" => "required|string",
+            "status" => "required",
+        ]);
+        echo "Form submitted";
     }
 
     /**
@@ -37,7 +42,7 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
-        echo "<h1>Show Method</h1>";
+        return view("news.show");
     }
 
     /**
@@ -45,7 +50,7 @@ class NewsController extends Controller
      */
     public function edit(News $news)
     {
-        echo "<h1>Edit Method</h1>";
+        return view("news.edit");
     }
 
     /**
