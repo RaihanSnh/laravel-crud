@@ -25,8 +25,8 @@
                 <label for="status">Status:</label>
                     <select name="status" id="status">
                         <option value="">-- Select --</option>
-                        <option {{ old('status') == 'active' ? 'selected':'' }} value="active">Active</option>
-                        <option {{ old('status') == 'in-active' ? 'selected':'' }} value="in-active">In Active</option>
+                        <option {{ old('status') == '1' ? 'selected':'' }} value="1">Active</option>
+                        <option {{ old('status') == '0' ? 'selected':'' }} value="0">In Active</option>
                     </select>
                     @error("status")
                     <div class="app-error">{{ $message }}</div>

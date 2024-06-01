@@ -29,12 +29,32 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $data = $request->validate([
             "title" => "required|string",
             "description" => "required|string",
             "status" => "required",
         ]);
-        echo "Form submitted";
+
+        $data["user_id"] = 1;
+
+        $imageName = NULL;
+
+        if($request->banner_image != NULL){
+            $imageObject = $request->banner_image;
+
+            $imageExtension = $imageObject->getClientOriginalExtension();
+            $newImageName = time().".".$imageExtension;
+
+            $imageObject->move(public_path("images"), $newImageName);
+
+            $imageName = $newImageName;
+        }
+        
+        $data["banner_image"] = $imageName;
+        
+        News::create($data);
+
+        return to_route('news.create')->with("success", "News created");
     }
 
     /**

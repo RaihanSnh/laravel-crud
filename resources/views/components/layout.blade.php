@@ -10,6 +10,10 @@
 </head>
 <body>
     <div>
+        @session("success")
+        <div class="success-message">{{ session("success") }}</div>
+        @endsession
+
         {{ $slot }}
     </div>
 </body>
