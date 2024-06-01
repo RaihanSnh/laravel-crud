@@ -30,7 +30,11 @@
                     <td class="action-buttons">
                         <a href="{{ route('news.show', $news) }}" class="action-buttons"><i class="fa fa-eye"></i></a>
                         <a href="{{ route('news.edit', $news) }}" class="action-buttons"><i class="fa fa-edit"></i></a>
-                        <a href="{{ route('news.destroy', $news)}}" class="action-buttons"><i class="fa fa-trash"></i></a>
+                        <form action="{{ route('news.destroy', $news) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button onclick="return confirm('u sure want to delete this?')" class="action-buttons"><i class="fa fa-trash"></i></button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach

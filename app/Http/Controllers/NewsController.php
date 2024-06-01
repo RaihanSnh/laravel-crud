@@ -118,6 +118,8 @@ class NewsController extends Controller
      */
     public function destroy(News $news)
     {
-        //
+        $news->delete();
+
+        return to_route("news.index")->with("success", "News Deleted");
     }
 }
