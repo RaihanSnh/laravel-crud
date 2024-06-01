@@ -28,9 +28,9 @@
                     <td>{{ $news->status == 1 ? "Active" : "Inactive" }}</td>
                     <td>{{ $news->created_at }}</td>
                     <td class="action-buttons">
-                        <a href="#" class="action-buttons"><i class="fa fa-eye"></i></a>
-                        <a href="#" class="action-buttons"><i class="fa fa-edit"></i></a>
-                        <a href="#" class="action-buttons"><i class="fa fa-trash"></i></a>
+                        <a href="{{ route('news.show', $news) }}" class="action-buttons"><i class="fa fa-eye"></i></a>
+                        <a href="{{ route('news.edit', $news) }}" class="action-buttons"><i class="fa fa-edit"></i></a>
+                        <a href="{{ route('news.destroy', $news)}}" class="action-buttons"><i class="fa fa-trash"></i></a>
                     </td>
                 </tr>
                 @endforeach

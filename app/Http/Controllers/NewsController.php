@@ -65,7 +65,9 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
-        return view("news.show");
+        return view("news.show", [
+            "news" => $news
+        ]);
     }
 
     /**
@@ -73,7 +75,9 @@ class NewsController extends Controller
      */
     public function edit(News $news)
     {
-        return view("news.edit");
+        return view("news.edit", [
+            "news" => $news
+        ]);
     }
 
     /**
@@ -81,7 +85,32 @@ class NewsController extends Controller
      */
     public function update(Request $request, News $news)
     {
-        //
+        $data = $request->validate([
+            "title" => "required|string",
+            "description" => "required|string",
+            "status" => "required",
+        ]);
+
+        if($request->banner_image != null){
+
+            $imageName = null;
+            
+            $imageObject = $request->banner_image;
+
+            $imageExt = $imageObject->getclientOriginalExtension();
+
+            $newImageName = time() .".".$imageExt;
+
+            $imageObject->move(public_path('images'), $newImageName);
+
+            $imageName = $newImageName;
+
+            $data["banner_image"] = $imageName;
+        }
+
+        $news->update($data);
+
+        return to_route('news.show', $news)->with("success", "News Updated");
     }
 
     /**
