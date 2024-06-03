@@ -67,7 +67,7 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
-        if($news->usr_id != request()->user()->id){
+        if($news->user_id != request()->user()->id){
             abort(403);
         }
         return view("news.show", [
